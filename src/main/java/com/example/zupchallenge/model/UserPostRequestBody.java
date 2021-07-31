@@ -6,24 +6,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserPostRequestBody {
 
-
     private long id;
 
-    @NotNull
+    @NotBlank
     private String name;
-
-    @NotNull
+    @NotBlank
     private long cpf;
-
-    @NotNull
+    @NotBlank
     private long birth;
-
-    @NotNull
+    @NotBlank
     private String email;
 
 }
