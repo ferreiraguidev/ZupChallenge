@@ -2,14 +2,17 @@ version: "3.9"
 
 services:
   db:
-    image: mysql:8
-    #    volumes:
-    #      - db_data:/var/lib/mysql
-    restart: always
+    image: mysql
+    container_name: zupch
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: datatest
-      MYSQL_USER: user0
+      MYSQL_USER: user
       MYSQL_PASSWORD: root
     ports:
       - "3306:3306"
+    volumes:
+    - zupch_data:/var/lib/mysql
+
+volumes:
+  zupch_data:
+

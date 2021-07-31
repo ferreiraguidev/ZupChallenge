@@ -5,7 +5,6 @@ import com.example.zupchallenge.model.User;
 import com.example.zupchallenge.model.UserPostRequestBody;
 import com.example.zupchallenge.service.UserService;
 import lombok.Data;
-import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,5 +29,6 @@ public class UserRegistrationController {
     @PostMapping("/user")
     public ResponseEntity<User> save(UserPostRequestBody userPostRequestBody) {
         return new ResponseEntity<>(userService.save(userPostRequestBody), HttpStatus.OK);
+
     }
 }

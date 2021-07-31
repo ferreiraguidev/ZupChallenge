@@ -8,8 +8,6 @@ public class ZupChallengeApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ZupChallengeApplication.class, args);
+
     }
-
-
-
 }
