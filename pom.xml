@@ -30,7 +30,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <!--BANCO QUE ESTOU USANDO-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -46,6 +46,19 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--COLOCAR DEPENDENCIAS NOVAS AQUI EM BAIXO-->
+        <!--FICAR ATENTO COM DUPLICAÇÕES DE DEPENDENCYS-->
+        <!--NAO ADICIONE OUTRO BANCO SE NAO USAR-->
+
+
+
+
+
+
+
+
+
+
     </dependencies>
 
     <build>
