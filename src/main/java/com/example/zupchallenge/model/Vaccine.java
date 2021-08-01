@@ -1,16 +1,17 @@
 package com.example.zupchallenge.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Builder
 @AllArgsConstructor
@@ -31,5 +32,12 @@ public class Vaccine {
 
     @NotBlank
     private String date;
+
+    @NotNull
+    @ManyToOne
+    @JsonIgnore
+    private Users users;
+
+
 
 }

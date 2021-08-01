@@ -11,6 +11,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Builder
@@ -37,5 +39,9 @@ public class Users {
 
     @NotNull
     private LocalDate birth;
+
+    @OneToMany(mappedBy = "users")
+    private List<Vaccine> vaccineList;
+
 
 }
