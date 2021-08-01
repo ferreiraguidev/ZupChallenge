@@ -1,37 +1,36 @@
 package com.example.zupchallenge.service;
 
 
-import com.example.zupchallenge.model.User;
+import com.example.zupchallenge.model.Users;
 import com.example.zupchallenge.model.UserPostRequestBody;
 import com.example.zupchallenge.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class UserService {
 
-    @Autowired
-    UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    public User save(UserPostRequestBody userPostRequestBody) {
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
-        User user = User.builder()
+    public Users save(UserPostRequestBody userPostRequestBody) {
+
+        Users users = Users.builder()
                 .name(userPostRequestBody.getName())
                 .email(userPostRequestBody.getEmail())
                 .cpf(userPostRequestBody.getCpf())
                 .birth(userPostRequestBody.getBirth())
                 .build();
 
-        return userRepository.save(user);
+        return userRepository.save(users);
     }
 
-    public List<User> listAll() {
+    public List<Users> listAllUser() {
         return userRepository.findAll();
-
     }
 
 
